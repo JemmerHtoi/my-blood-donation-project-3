@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Verification</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="form-container">
+        <div class="form-header">
+            <h2>OTP Verification</h2>
+        </div>
+        
+        <form class="otp-form">
+    <div class="otp-inputs">
+    <input type="text" id="otp1" maxlength="1" oninput="moveNext(this, 'otp2')">
+    <input type="text" id="otp2" maxlength="1" oninput="moveNext(this, 'otp3')">
+    <input type="text" id="otp3" maxlength="1" oninput="moveNext(this, 'otp4')">
+    <input type="text" id="otp4" maxlength="1" oninput="moveNext(this, '')">
+</div>
+    <div id="successModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); align-items: center; justify-content: center;">
+    <div style="background: white; padding: 20px; border-radius: 10px; text-align: center;">
+        <h3>Success!</h3>
+        <p>OTP Verified Successfully.</p>
+        <button onclick="closeModal()">Close</button>
+    </div>
+</div>
+
+    <button type="button" class="submit-btn" onclick="verifyOTP()">Verify OTP</button>
+    
+    <p class="resend-text">
+        Didn't receive code? 
+        <span id="timer-box">Resend in <b id="seconds">60</b>s</span>
+        <a href="#" id="resend-link" style="display: none;" onclick="resendOTP()">Resend OTP</a>
+    </p>
+</form>
+
+<script src="script.js"></script>
+
+
+    <script>
+        function verifyOTP() {
+            alert("Successfully verified!");
+        }
+    </script>
+</body>
+</html>
+    
